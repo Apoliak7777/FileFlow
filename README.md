@@ -16,7 +16,7 @@ It helps you keep your Downloads and other folders tidy by automatically sorting
 
 The .exe is **portable** — just download and run it. No installation required.
 
-**Latest release:** [v7.0](https://github.com/Apoliak7777/FileFlow/releases/tag/v7.0)
+**Latest release:** [v7.0](https://github.com/Apoliak7777/FileFlow/releases/latest) (direct .exe download)
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![Platform](https://img.shields.io/badge/Platform-Windows-0078D6)
