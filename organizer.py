@@ -452,7 +452,7 @@ def should_ignore(name: str, patterns: list[str]) -> bool:
 
 @dataclass
 class PlanItem:
-    """Mutable plan item for interactive file list (premium feature)."""
+    """Mutable plan item for interactive file list."""
     path: Path
     category: str
     selected: bool = True
@@ -833,8 +833,8 @@ class ConfirmDialog(ctk.CTkToplevel):
         return dlg.result
 
 
-class PremiumSummaryDialog(ctk.CTkToplevel):
-    """Stunning success summary dialog — premium delight."""
+class SummaryDialog(ctk.CTkToplevel):
+    """Success summary dialog."""
 
     def __init__(self, parent, base_name: str, moves: list[tuple[str, str]]):
         super().__init__(parent)
@@ -912,7 +912,7 @@ class PremiumSummaryDialog(ctk.CTkToplevel):
 
 
 class StatCard(ctk.CTkFrame):
-    """Premium animated stat card."""
+    """Animated stat card."""
 
     def __init__(self, parent, caption, value="—", accent=None):
         accent = accent or get_accent()
@@ -1763,7 +1763,7 @@ class OrganizerApp(ctk.CTk):
                                    text_color=C["textHi"], command=self._browse)
         browse_btn.grid(row=1, column=1, padx=(10, 0))
 
-        # Drag & drop hint (premium)
+        # Drag & drop hint
         if HAS_DND:
             dnd_label = ctk.CTkLabel(pinner, text="or drop folder here",
                                      font=ctk.CTkFont(size=11), text_color=get_accent())
@@ -1784,7 +1784,7 @@ class OrganizerApp(ctk.CTk):
                           text_color=C["textHi"], font=ctk.CTkFont(size=10),
                           command=lambda pp=p: self._switch_preset(pp)).pack(side="left", padx=(0, 4))
 
-        # Action bar — big beautiful buttons
+        # Action bar
         actions = ctk.CTkFrame(view, fg_color="transparent")
         actions.grid(row=2, column=0, sticky="ew", padx=24, pady=(12, 6))
 
@@ -1836,7 +1836,7 @@ class OrganizerApp(ctk.CTk):
                         text_color=C["textHi"], border_color=C["border"],
                         checkmark_color=get_accent()).pack(side="left")
 
-        # Beautiful search
+        # Search
         self.search_var.trace_add("write", lambda *a: self._filter_file_list())
         search_frame = ctk.CTkFrame(topbar, fg_color=C["surface2"], corner_radius=10)
         search_frame.grid(row=0, column=1, sticky="e")
@@ -1885,7 +1885,7 @@ class OrganizerApp(ctk.CTk):
             row.pack(fill="x", pady=3)
             self.cards[name] = row
 
-        # Right: THE BEAUTIFUL INTERACTIVE FILE LIST
+        # Right: Interactive file list
         right = ctk.CTkFrame(main_area, fg_color=C["surface"], corner_radius=18,
                              border_width=1, border_color=C["border"])
         right.grid(row=0, column=1, sticky="nsew")
@@ -2366,7 +2366,7 @@ h1 {{ color:#5B7CFA; }} .cat {{ margin-top:30px; border-left:4px solid #5B7CFA; 
 
         try:
             report_path.write_text(html, encoding="utf-8")
-            self._toast(f"Beautiful HTML report saved", SUCCESS)
+            self._toast(f"HTML report saved", SUCCESS)
             os.startfile(str(report_path))
         except Exception as e:
             self._toast(f"Export failed: {e}", DANGER)
@@ -2376,7 +2376,7 @@ h1 {{ color:#5B7CFA; }} .cat {{ margin-top:30px; border-left:4px solid #5B7CFA; 
             self._toast("Drop a folder or click Preview to begin the magic.")
 
     def _apply_smart_rules(self, items: list[PlanItem]):
-        """Premium built-in smart rules (easy to extend)."""
+        """Built-in smart rules (easy to extend)."""
         for item in items:
             name = item.path.name.lower()
             # Screenshot / screen recordings → Images
@@ -2661,7 +2661,7 @@ h1 {{ color:#5B7CFA; }} .cat {{ margin-top:30px; border-left:4px solid #5B7CFA; 
             cat = self._apply_rules_and_smart(p)
             self.last_plan.append(PlanItem(path=p, category=cat))
 
-        # Simple but powerful built-in smart rules (premium)
+        # Built-in smart rules
         self._apply_smart_rules(self.last_plan)
 
         self._save_config()
@@ -2685,7 +2685,7 @@ h1 {{ color:#5B7CFA; }} .cat {{ margin-top:30px; border-left:4px solid #5B7CFA; 
         self.stat_size.set_value(human_size(size))
 
         if total:
-            self._toast(f"{total} files ready — beautiful list below.", get_accent())
+            self._toast(f"{total} files ready.", get_accent())
             use_p = getattr(self, "use_perceptual_duplicates", ctk.BooleanVar(value=True)).get()
             dups = self._find_duplicates(self.last_plan, use_perceptual=use_p)
             dup_count = sum(len(v) for v in dups.values())
@@ -2827,12 +2827,12 @@ h1 {{ color:#5B7CFA; }} .cat {{ margin-top:30px; border-left:4px solid #5B7CFA; 
         if self.dry_run.get():
             msg = f"🔍 Dry Run complete — would have organized {moved_count} files."
         else:
-            msg = f"✨ Organized {moved_count} file(s) perfectly."
+            msg = f"Organized {moved_count} file(s)."
         if errors:
             msg += f"  ({errors} issues)"
         self._toast(msg, SUCCESS)
 
-        # Beautiful summary dialog
+        # Summary dialog
         try:
             undo_path = base / UNDO_FILE
             if undo_path.exists():
@@ -2841,7 +2841,7 @@ h1 {{ color:#5B7CFA; }} .cat {{ margin-top:30px; border-left:4px solid #5B7CFA; 
                 if ops:
                     last_moves = ops[-1].get("moves", [])
                     if last_moves:
-                        PremiumSummaryDialog(self, base.name, last_moves)
+                        SummaryDialog(self, base.name, last_moves)
         except Exception:
             pass
 
