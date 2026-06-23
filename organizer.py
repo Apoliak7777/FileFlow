@@ -66,7 +66,7 @@ except Exception:
 
 APP_NAME = "FileFlow"
 VERSION = "7.0"
-GITHUB_URL = "https://github.com/Apoliak7777"
+GITHUB_URL = "https://github.com/Apoliak7777/FileFlow"
 UNDO_FILE = ".organizer_undo.json"
 CONFIG_FILE = "organizer_config.json"
 MAX_HISTORY = 20
