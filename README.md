@@ -8,6 +8,16 @@
 
 It helps you keep your Downloads and other folders tidy by automatically sorting files into categories like Images, Documents, Videos, etc. It has a nice interface, live auto-organize, background tray mode, and even a full-PC search tool to find and delete junk safely.
 
+## Download
+
+**The easiest way:**
+
+→ Go to **[Releases](https://github.com/Apoliak7777/FileFlow/releases)** and download the latest `FileFlow.exe`.
+
+The .exe is **portable** — just download and run it. No installation required.
+
+**Latest release:** [v7.0](https://github.com/Apoliak7777/FileFlow/releases/tag/v7.0)
+
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![Platform](https://img.shields.io/badge/Platform-Windows-0078D6)
 ![UI](https://img.shields.io/badge/UI-CustomTkinter%20Fluent-5B7CFA)
@@ -75,15 +85,15 @@ Downloads/
 
 ---
 
-## Using FileFlow
+## How to use
 
-1. Run the `FileFlow.exe` (it's portable, nothing to install).
-2. Select the folder you want to organize.
-3. Click Preview to see what it found.
-4. Review and adjust as needed.
-5. Click Organize.
+1. Download and run `FileFlow.exe`
+2. Choose a folder (Downloads is pre-selected)
+3. Click **Preview** to see what will happen
+4. Adjust anything you want (change categories, unselect files...)
+5. Click **Organize**
 
-It is designed to be easy to use and safe. All organizes are recorded in History so you can undo them. The Find & Delete tool has protections against deleting system files.
+Everything is safe by default (Recycle Bin + undo via History). You can run it and close the window — it keeps working from the system tray if Live Auto is enabled.
 
 ---
 
