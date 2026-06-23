@@ -32,6 +32,8 @@ It helps you keep your Downloads and other folders tidy by automatically sorting
 
 Runs as a single portable .exe file — no installation or Python needed.
 
+Download the latest release from the GitHub Releases page (includes the ready-to-run FileFlow.exe).
+
 ## 🔎 Find & Delete — search & clean your whole PC
 
 <div align="center">
