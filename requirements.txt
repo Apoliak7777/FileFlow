@@ -1,0 +1,7 @@
+# FileFlow — Windows desktop app
+customtkinter>=5.2.0
+pillow>=10.0.0
+pypdf>=3.0.0
+watchdog>=4.0.0
+pystray>=0.19.5
+tkinterdnd2>=0.3.0; platform_system == "Windows"
