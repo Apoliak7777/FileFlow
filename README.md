@@ -13,7 +13,7 @@ It helps you keep your Downloads and other folders tidy by automatically sorting
 ![UI](https://img.shields.io/badge/UI-CustomTkinter%20Fluent-5B7CFA)
 ![License](https://img.shields.io/badge/License-GPL%20v3-green)
 
-<img src="assets/screenshot.png" width="860" alt="FileFlow Premium screenshot" />
+<img src="assets/screenshot.png" width="860" alt="FileFlow screenshot" />
 
 </div>
 
@@ -81,24 +81,26 @@ Downloads/
 4. Review and adjust as needed.
 5. Click Organize.
 
-It is designed to be easy to use and safe. All moves can be undone from History. Find & Delete has protections so you won't accidentally delete important system files.
+It is designed to be easy to use and safe. All organizes are recorded in History so you can undo them. The Find & Delete tool has protections against deleting system files.
 
 ---
 
 ## For developers
 
-To run from source:
+Run from source:
 
 ```powershell
 pip install -r requirements.txt
 python organizer.py
 ```
 
-To build the exe:
+Build the Windows exe (requires PyInstaller):
 
 ```powershell
 python -m PyInstaller FileFlow.spec
 ```
+
+The built executable will be in the `dist/` folder.
 
 ## Customizing
 
